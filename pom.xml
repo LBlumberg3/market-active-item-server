@@ -11,8 +11,9 @@
 	<groupId>com.leo.market.items</groupId>
 	<artifactId>active-item-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>active-item-server</name>
-	<description>Simple API for CRUD functionality of active items </description>
+	<description>Simple API for CRUD functionality on active items</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -35,6 +36,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<version>2.1.6.RELEASE</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -47,6 +53,7 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- Keeping the postgresql connector so I can play around on my desktop -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
