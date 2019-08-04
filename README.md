@@ -1,4 +1,4 @@
-# market-active-item-server
+# Market Active Item Server
 Simple Spring Boot API providing CRUD functionality for items listed in an online marketplace. 
 
 The basic premise is a craigslist / facebook marketplace clone. This repository is for a service that only deals with items currently available to see through the public interface. Historical data will be handled by a separate service, to keep everything narrowly focused. 
