@@ -66,7 +66,7 @@ public interface ItemServicer<T extends AbstractItem, ID> {
     /**
      * Method to persist changes to an existing item, or create the item if the ID is not found
      *
-     * @param item   data to persist
+     * @param item data to persist
      * @param create if the ID is not found, should a new record be created (true) or not (false)
      * @return data that were persisted
      * @throws IdNotFoundException if the id is not found, and create is set to false

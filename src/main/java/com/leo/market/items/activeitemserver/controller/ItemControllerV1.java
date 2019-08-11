@@ -3,8 +3,10 @@ package com.leo.market.items.activeitemserver.controller;
 
 import com.leo.market.items.activeitemserver.beans.SimpleItem;
 import com.leo.market.items.activeitemserver.constants.Constants;
+import com.leo.market.items.activeitemserver.service.ItemServiceImpl;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,9 @@ import org.springframework.web.bind.annotation.*;
 public class ItemControllerV1 {
 
     public static final Logger logger = LoggerFactory.getLogger(ItemControllerV1.class);
+
+    @Autowired
+    private ItemServiceImpl itemService;
 
     /**
      * Controller-specific health check, because the Spring Boot actuator can return non-OK responses
@@ -73,7 +78,7 @@ public class ItemControllerV1 {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         if (!item.getId().equals(id)) {
-            return new ResponseEntity<>(Constants.INVALID_ID_JSON_RESPONSE, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(Constants.INVALID_ID_JSON, HttpStatus.BAD_REQUEST);
         }
 
         // call service layer with update data
